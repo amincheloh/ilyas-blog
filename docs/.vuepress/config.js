@@ -1,6 +1,19 @@
 module.exports = {
   title: 'Ilyas Blog',
   description: 'บล็อกบันทึกความรู้ของอิลยาส',
+  head: [['script', {}, `
+    window.onload = function () {
+      var content = document.querySelector('.content')
+      var p = content.querySelectorAll('p');
+      for (var i = 0; i < p.length; i++) {
+        p[i].setAttribute('dir', 'auto');
+      }
+      var blockquote = content.querySelectorAll('blockquote');
+      for (var i = 0; i < blockquote.length; i++) {
+        blockquote[i].setAttribute('dir', 'auto');
+      }  
+    }
+  `]],
   themeConfig: {
     nav: [
       {
