@@ -1,17 +1,17 @@
 function addDirAuto() {
   const content = document.querySelector('.content');
-  if (content) {
-    const p = content.querySelectorAll('p'); 
-    for (var i = 0; i < p.length; i++) {
-      p[i].setAttribute('dir', 'auto');
-    }
-    const blockquote = content.querySelectorAll('blockquote');
-    for (let i = 0; i < blockquote.length; i++) {
-      blockquote[i].setAttribute('dir', 'auto');
-    }  
-  } else {
+  if (!content) {
     setTimeout(addDirAuto, 100);
+    return;
   }
+  const p = content.querySelectorAll('p'); 
+  for (var i = 0; i < p.length; i++) {
+    p[i].setAttribute('dir', 'auto');
+  }
+  const blockquote = content.querySelectorAll('blockquote');
+  for (let i = 0; i < blockquote.length; i++) {
+    blockquote[i].setAttribute('dir', 'auto');
+  }  
 }
 
 export default ({
